@@ -15,7 +15,7 @@ class DashedPainter extends CustomPainter {
   final Color color;
 
   final Gradient? gradient;
-  final Color? borderColor;
+
   final BorderType borderType;
   final Radius radius;
   final StrokeCap strokeCap;
@@ -26,7 +26,7 @@ class DashedPainter extends CustomPainter {
     this.strokeWidth = 2,
     this.dashPattern = const <double>[3, 1],
     this.color = Colors.black,
-    this.borderColor,
+
     this.gradient,
     this.borderType = BorderType.Rect,
     this.radius = const Radius.circular(0),
