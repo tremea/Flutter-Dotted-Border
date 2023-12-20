@@ -13,7 +13,7 @@ class DashedPainter extends CustomPainter {
   final double strokeWidth;
   final List<double> dashPattern;
   final Color color;
-  final Color borderColor;
+
   final Gradient? gradient;
   final BorderSide top;
   final BorderSide right ;
@@ -29,7 +29,7 @@ class DashedPainter extends CustomPainter {
     this.strokeWidth = 2,
     this.dashPattern = const <double>[3, 1],
     this.color = Colors.black,
-    this.borderColor = Colors.black,
+
     this.top = BorderSide.none,
     this.right = BorderSide.none,
     this.bottom = BorderSide.none,
@@ -75,6 +75,8 @@ class DashedPainter extends CustomPainter {
     switch (top.style) {
       case BorderStyle.solid:
         paint.color = top.color;
+        break;
+      case BorderStyle.none:
         break;
       case BorderStyle.none:
         break;

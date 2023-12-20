@@ -17,7 +17,7 @@ class DottedBorder extends StatelessWidget {
   final EdgeInsets borderPadding;
   final double strokeWidth;
   final Color color;
-  final Color borderColor;
+
   final Gradient? gradient;
   final List<double> dashPattern;
   final BorderType borderType;
@@ -33,7 +33,6 @@ class DottedBorder extends StatelessWidget {
   DottedBorder({
     required this.child,
     this.color = Colors.black,
-    this.borderColor = Colors.black,
     this.gradient,
     this.top = BorderSide.none,
     this.right = BorderSide.none,
@@ -63,7 +62,10 @@ class DottedBorder extends StatelessWidget {
               padding: borderPadding,
               strokeWidth: strokeWidth,
               radius: radius,
-              borderColor: borderColor,
+              bottom: bottom,
+              top: top,
+              right: right,
+              left: left,
               color: color,
               gradient: gradient,
               borderType: borderType,
