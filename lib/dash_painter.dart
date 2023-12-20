@@ -15,10 +15,7 @@ class DashedPainter extends CustomPainter {
   final Color color;
 
   final Gradient? gradient;
-  final BorderSide top;
-  final BorderSide right ;
-  final BorderSide bottom;
-  final BorderSide left ;
+  final Color? borderColor;
   final BorderType borderType;
   final Radius radius;
   final StrokeCap strokeCap;
@@ -29,11 +26,7 @@ class DashedPainter extends CustomPainter {
     this.strokeWidth = 2,
     this.dashPattern = const <double>[3, 1],
     this.color = Colors.black,
-
-    this.top = BorderSide.none,
-    this.right = BorderSide.none,
-    this.bottom = BorderSide.none,
-    this.left = BorderSide.none,
+    this.borderColor,
     this.gradient,
     this.borderType = BorderType.Rect,
     this.radius = const Radius.circular(0),
@@ -60,6 +53,7 @@ class DashedPainter extends CustomPainter {
     Paint paint = Paint()
       ..strokeWidth = strokeWidth
       ..strokeCap = strokeCap
+
       ..style = PaintingStyle.stroke;
 
 
@@ -72,41 +66,6 @@ class DashedPainter extends CustomPainter {
       paint.color = color;
     }
 
-    switch (top.style) {
-      case BorderStyle.solid:
-        paint.color = top.color;
-        break;
-      case BorderStyle.none:
-        break;
-      case BorderStyle.none:
-        break;
-    }
-
-    switch (right.style) {
-      case BorderStyle.solid:
-        paint.color = top.color;
-        break;
-      case BorderStyle.none:
-        break;
-    }
-
-
-    switch (bottom.style) {
-      case BorderStyle.solid:
-        paint.color = top.color;
-        break;
-      case BorderStyle.none:
-        break;
-    }
-
-
-    switch (left.style) {
-      case BorderStyle.solid:
-        paint.color = top.color;
-        break;
-      case BorderStyle.none:
-        break;
-    }
 
 
 
